@@ -1,0 +1,165 @@
+{
+  "properties": [
+    {
+      "id": "prop1",
+      "type": "House",
+      "bedrooms": 3,
+      "price": 750000,
+      "tenure": "Freehold",
+      "description": "Attractive three bedroom semi-detached family home situated within 0.5 miles of Petts Wood station with fast trains to London and within easy walking distance of local shops, schools, bus routes and National Trust woodland. The property comprises; two receptions, fitted 18'9 x 10'1 kitchen/breakfast room and conservatory. The property also benefits from having a utility room and cloakroom. To the first floor there are three bedrooms and a family bathroom with separate WC. Additional features include double glazing, gas central heating and a well presented interior...",
+      "location": "Petts Wood Road, Petts Wood, Orpington BR5",
+      "picture": "images/prop1pic1small.png",
+      "images": [
+        "images/prop1pic1small.png",
+        "images/prop1pic2small.png",
+        "images/prop1pic3small.png",
+        "images/prop1pic4small.png"
+      ],
+      "floorPlan": "images/prop1pic3small.png",
+      "url": "properties/prop1.html",
+      "added": {
+        "month": "October",
+        "day": 12,
+        "year": 2022
+      }
+    },
+    {
+      "id": "prop2",
+      "type": "Flat",
+      "bedrooms": 2,
+      "price": 399995,
+      "tenure": "Freehold",
+      "description": "Presented in excellent decorative order throughout is this two double bedroom, two bathroom, garden flat. <br>The modern fitted kitchen is open plan to the living room which boasts solid wooden floors and includes integrated appliances including a dishwasher & a washing machine. This large open plan benefits from bi folding doors onto a secluded private courtyard garden. Both bedrooms are double sized, and the family bathroom boasts a matching three piece suite a shower attachment over the bath. There is also a separate wet room. There are walnut doors throughout and wiring for Sky TV/aerial points in the living room/kitchen and both bedrooms.<br>This apartment being only five years old, is still under a 10 year building guarantee...",
+      "location": "Crofton Road Orpington BR6",
+      "picture": "images/prop2pic1small.png",
+      "images": [
+        "images/prop2pic1small.png",
+        "images/prop2pic2small.png",
+        "images/prop2pic3small.png",
+        "images/prop2pic4small.png"
+      ],
+      "floorPlan": "images/prop2pic3small.png",
+      "url": "properties/prop2.html",
+      "added": {
+        "month": "September",
+        "day": 14,
+        "year": 2022
+      }
+    },
+    {
+      "id": "prop3",
+      "type": "House",
+      "bedrooms": 4,
+      "price": 925000,
+      "tenure": "Freehold",
+      "description": "Spacious four bedroom detached family home offering a bright double reception, modern kitchen/diner and a large rear garden. The property benefits from off-street parking, a garage and excellent access to local schools and transport links. Ideal for families looking for generous living space and a quiet residential setting",
+      "location": "Manor Drive, Bromley BR1",
+      "picture": "images/prop3pic1small.png",
+      "images": [
+        "images/prop3pic1small.png",
+        "images/prop3pic2small.png",
+        "images/prop3pic3small.png",
+        "images/prop3pic4small.png"
+      ],
+      "floorPlan": "images/prop3pic3small.png",
+      "url": "properties/prop3.html",
+      "added": {
+        "month": "November",
+        "day": 2,
+        "year": 2022
+      }
+    },
+    {
+      "id": "prop4",
+      "type": "Flat",
+      "bedrooms": 1,
+      "price": 275000,
+      "tenure": "Leasehold",
+      "description": "Well-presented one bedroom apartment set within a secure development. Features include a fitted kitchen, open-plan living space, a modern bathroom and built-in storage. Conveniently located close to shops, cafes and a mainline station making it ideal for first-time buyers or investors...",
+      "location": "Station Road, Dartford DA1",
+      "picture": "images/prop4pic1small.png",
+      "images": [
+        "images/prop4pic1small.png",
+        "images/prop4pic2small.png",
+        "images/prop4pic3small.png",
+        "images/prop4pic4small.png"
+      ],
+      "floorPlan": "images/prop4pic3small.png",
+      "url": "properties/prop4.html",
+      "added": {
+        "month": "August",
+        "day": 6,
+        "year": 2022
+      }
+    },
+    {
+      "id": "prop5",
+      "type": "House",
+      "bedrooms": 2,
+      "price": 485000,
+      "tenure": "Freehold",
+      "description": "Charming two bedroom terraced home with a spacious lounge, separate dining area and a contemporary kitchen. Upstairs offers two double bedrooms and a family bathroom. Further benefits include a private rear garden and easy access to local parks, shops and commuter routes...",
+      "location": "High Street, Lewisham SE13",
+      "picture": "images/prop5pic1small.png",
+      "images": [
+        "images/prop5pic1small.png",
+        "images/prop5pic2small.png",
+        "images/prop5pic3small.png",
+        "images/prop5pic4small.png"
+      ],
+      "floorPlan": "images/prop5pic3small.png",
+      "url": "properties/prop5.html",
+      "added": {
+        "month": "July",
+        "day": 19,
+        "year": 2022
+      }
+    },
+    {
+      "id": "prop6",
+      "type": "Flat",
+      "bedrooms": 3,
+      "price": 610000,
+      "tenure": "Leasehold",
+      "description": "Modern three bedroom apartment with a large open-plan kitchen/living room and balcony. The property includes two bathrooms (one en-suite), ample storage and access to residents' facilities. Located within walking distance of transport links and local amenities, offering an excellent lifestyle option...",
+      "location": "Canary Wharf, London E14",
+      "picture": "images/prop6pic1small.png",
+      "images": [
+        "images/prop6pic1small.png",
+        "images/prop6pic2small.png",
+        "images/prop6pic3small.png",
+        "images/prop6pic4small.png"
+      ],
+      "floorPlan": "images/prop6pic3small.png",
+      "url": "properties/prop6.html",
+      "added": {
+        "month": "October",
+        "day": 28,
+        "year": 2022
+      }
+    },
+    {
+      "id": "prop7",
+      "type": "House",
+      "bedrooms": 5,
+      "price": 1200000,
+      "tenure": "Freehold",
+      "description": "Modern three bedroom apartment with a large open-plan kitchen/living room and balcony. The property includes two bathrooms (one en-suite), ample storage and access to residents' facilities. Located within walking distance of transport links and local amenities, offering an excellent lifestyle option...",
+      "location": "Canary Wharf, London E14", 
+      "picture": "images/prop7pic1small.png",
+      "images": [
+        "images/prop7pic1small.png",
+        "images/prop7pic2small.png",
+        "images/prop7pic3small.png",
+        "images/prop7pic4small.png"
+      ],
+      "floorPlan": "images/prop7pic3small.png",
+      "url": "properties/prop7.html",
+      "added": {
+        "month": "September",
+        "day": 30,
+        "year": 2022
+      }
+    }
+  ]
+}
