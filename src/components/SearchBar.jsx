@@ -14,11 +14,11 @@ const SearchBar = ({
 }) => {
   return (
     <section>
-      <h1>Believe in Finding it</h1>
-      <h3>Search for the gadget, you are looking for [rent or sale]</h3>
+      <h1>Propify</h1>
+      <h3>Search for your next home</h3>
 
       <form onSubmit={(e) => e.preventDefault()}>
-        <label htmlFor="term">Search Gadget or Location:</label><br />
+        <label htmlFor="term">Search House or Location:</label><br />
         <input type="text" id="term" name="term" onChange={(e) => setSearchTerm(e.target.value)} />
         <br /><br />
 
@@ -69,7 +69,6 @@ const SearchBar = ({
         <button type="button" className="button" onClick={() => setTenureFilter('Any')}>
           Show All
         </button>
-
       </form>
     </section>
   );

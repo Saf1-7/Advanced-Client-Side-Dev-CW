@@ -19,7 +19,7 @@
 * { box-sizing: border-box; }
 
 body {
-  margin: 0;
+  margin: 30;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
   color: var(--text);
   background:
@@ -32,9 +32,17 @@ body {
 
 /* Layout */
 .container {
-  max-width: 1120px;
+  /*  wider so the page fills out */
+  width: 100%;
+  max-width: 1500px;
   margin: 0 auto;
-  padding: 22px 16px 40px;
+  padding: 22px 20px 44px;
+}
+
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1700px;
+  }
 }
 
 .header { margin-bottom: 16px; }
@@ -59,6 +67,7 @@ h3{
   padding: 14px;
   box-shadow: var(--shadow);
   backdrop-filter: blur(10px);
+  width: 100%;
 }
 
 .card img {
@@ -73,11 +82,20 @@ h3{
   grid-template-columns: 1fr;
   gap: 16px;
 }
+
+/* Make results area fill the page on desktop */
 @media (min-width: 900px) {
   .grid {
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 360px minmax(0, 1fr); /* left fixed, right grows */
+    gap: 20px;
     align-items: start;
   }
+}
+
+/* Ensure the right column can actually grow (prevents weird shrink/overflow) */
+.grid > div:nth-child(2) {
+  min-width: 0;
+  width: 100%;
 }
 
 /* Buttons */
@@ -140,7 +158,7 @@ label {
 }
 
 input, select {
-  width: min(380px, 100%);
+  width: min(420px, 100%); /* slightly wider inputs */
   padding: 10px 12px;
   margin-top: 6px;
   margin-bottom: 12px;

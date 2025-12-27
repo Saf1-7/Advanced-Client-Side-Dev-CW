@@ -69,6 +69,7 @@ function App() {
                 addFavourite={addFavourite}
                 removeFavourite={removeFavourite}
                 clearFavourites={clearFavourites}
+                tenureFilter={tenureFilter}
                 />
 
             </div>
