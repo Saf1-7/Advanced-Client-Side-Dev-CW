@@ -1,27 +1,78 @@
+:root{
+  --bg: #0b1020;
+  --panel: rgba(255,255,255,0.06);
+  --panel2: rgba(255,255,255,0.09);
+  --border: rgba(255,255,255,0.12);
+  --text: rgba(255,255,255,0.92);
+  --muted: rgba(255,255,255,0.68);
+
+  --primary: #7c3aed;   /* purple */
+  --primary2: #22d3ee;  /* cyan */
+  --good: #22c55e;
+  --warn: #f59e0b;
+  --bad: #ef4444;
+
+  --shadow: 0 10px 30px rgba(0,0,0,0.35);
+  --radius: 16px;
+}
+
+* { box-sizing: border-box; }
+
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #0b0b0b;
-  color: #eee;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  color: var(--text);
+  background:
+    radial-gradient(900px 600px at 20% 10%, rgba(124,58,237,0.35), transparent 55%),
+    radial-gradient(900px 600px at 80% 15%, rgba(34,211,238,0.25), transparent 60%),
+    radial-gradient(900px 700px at 50% 100%, rgba(34,197,94,0.10), transparent 60%),
+    var(--bg);
+  min-height: 100vh;
 }
 
+/* Layout */
 .container {
-  max-width: 1100px;
+  max-width: 1120px;
   margin: 0 auto;
-  padding: 16px;
+  padding: 22px 16px 40px;
 }
 
-h1, h3 {
-  margin: 8px 0;
+.header { margin-bottom: 16px; }
+
+h1, h3 { margin: 8px 0; }
+h1{
+  font-size: 34px;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+h3{
+  font-size: 16px;
+  color: var(--muted);
+  font-weight: 500;
 }
 
+/* Panel / cards */
+.card {
+  background: linear-gradient(180deg, var(--panel), rgba(255,255,255,0.04));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Two column layout used on home (favs + results) */
 .grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 16px;
 }
-
-/* Desktop: favourites left, results right */
 @media (min-width: 900px) {
   .grid {
     grid-template-columns: 1fr 2fr;
@@ -29,77 +80,159 @@ h1, h3 {
   }
 }
 
-.card {
-  background: #111;
-  border: 1px solid #333;
-  border-radius: 10px;
-  padding: 12px;
-}
-
-.card img {
-  width: 100%;
-  border-radius: 10px;
-}
-
+/* Buttons */
 .button {
-  padding: 8px 12px;
-  border: 1px solid #444;
-  background: #1b1b1b;
-  color: white;
+  padding: 10px 12px;
+  border: 1px solid rgba(255,255,255,0.16);
+  background: rgba(255,255,255,0.06);
+  color: var(--text);
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 12px;
   margin-right: 8px;
-  margin-top: 6px;
+  transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
 }
-
 .button:hover {
-  border-color: #777;
+  background: rgba(255,255,255,0.10);
+  border-color: rgba(255,255,255,0.28);
+  transform: translateY(-1px);
+}
+.button:active { transform: translateY(0px); }
+
+.buttonPrimary{
+  background: linear-gradient(90deg, rgba(124,58,237,0.95), rgba(34,211,238,0.85));
+  border: 0;
+}
+.buttonPrimary:hover{ filter: brightness(1.05); }
+
+.buttonDanger{
+  background: rgba(239,68,68,0.14);
+  border-color: rgba(239,68,68,0.35);
 }
 
+/* Links */
 .link {
-  color: #8ab4ff;
+  color: rgba(34,211,238,0.95);
   text-decoration: none;
-  margin-right: 8px;
+  font-weight: 600;
 }
+.link:hover { text-decoration: underline; }
 
+/* Favourite box */
 .favBox {
-  border: 2px dashed #666;
-  border-radius: 10px;
-  padding: 12px;
+  border: 1px dashed rgba(255,255,255,0.28);
+  border-radius: var(--radius);
+  padding: 14px;
+  background: rgba(255,255,255,0.04);
 }
 
-/* ✅ Property Details layout */
-.detailsLayout {
+/* Search form styling (won’t break your markup) */
+section {
+  margin-bottom: 16px;
+  padding: 14px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.04);
+}
+
+label {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+input, select {
+  width: min(380px, 100%);
+  padding: 10px 12px;
+  margin-top: 6px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(0,0,0,0.25);
+  color: var(--text);
+  outline: none;
+}
+
+input:focus, select:focus {
+  border-color: rgba(34,211,238,0.6);
+  box-shadow: 0 0 0 3px rgba(34,211,238,0.18);
+}
+
+/* ImageCard layout helpers */
+.cardTitle {
+  font-weight: 800;
+  margin: 10px 0 4px;
+}
+.cardMeta {
+  color: var(--muted);
+  margin: 0 0 8px;
+  font-size: 13px;
+}
+.badgeRow { display:flex; gap:8px; flex-wrap:wrap; margin: 8px 0 10px; }
+.badge{
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.16);
+  background: rgba(255,255,255,0.06);
+  color: var(--text);
+}
+.badgeGood{ border-color: rgba(34,197,94,0.4); background: rgba(34,197,94,0.12); }
+.badgeWarn{ border-color: rgba(245,158,11,0.4); background: rgba(245,158,11,0.12); }
+
+/* PropertyDetails page */
+.detailsLayout{
   display: grid;
   grid-template-columns: 1fr;
   gap: 16px;
 }
-
-@media (min-width: 900px) {
-  .detailsLayout {
-    grid-template-columns: 1.4fr 1fr; /* images left, info/tabs right */
+@media (min-width: 950px){
+  .detailsLayout{
+    grid-template-columns: 1.2fr 1fr;
     align-items: start;
   }
 }
 
-.thumbRow {
+.mainImg{
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.thumbRow{
   display: flex;
-  gap: 8px;
+  gap: 10px;
   flex-wrap: wrap;
   margin-top: 10px;
 }
-
-.thumb {
-  width: 90px;
-  height: 60px;
+.thumbRow .button{
+  padding: 6px;
+  margin-right: 0;
+  border-radius: 14px;
+}
+.thumb{
+  width: 72px;
+  height: 56px;
   object-fit: cover;
-  border-radius: 8px;
-  border: 1px solid #333;
+  border-radius: 10px;
 }
 
-.mainImg {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  border: 1px solid #333;
+/* react-tabs tweaks (keeps their classes) */
+.react-tabs__tab-list{
+  border-bottom: 1px solid rgba(255,255,255,0.14);
+  margin: 10px 0 12px;
+}
+.react-tabs__tab{
+  color: var(--muted);
+  border: 1px solid transparent;
+  border-radius: 12px;
+  padding: 8px 12px;
+  margin-right: 8px;
+}
+.react-tabs__tab--selected{
+  color: var(--text);
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.16);
+}
+.react-tabs__tab-panel{
+  color: var(--text);
 }

@@ -17,6 +17,8 @@ function App() {
   const [dateTo, setDateTo] = useState('');
 
   const [favourites, setFavourites] = useState([]);
+  const [tenureFilter, setTenureFilter] = useState('Any');
+
 
   const addFavourite = (property) => {
     setFavourites((prev) => {
@@ -50,23 +52,24 @@ function App() {
                 setPostcodeArea={setPostcodeArea}
                 setDateFrom={setDateFrom}
                 setDateTo={setDateTo}
+                setTenureFilter={setTenureFilter}
               />
 
               <Gallery
-  searchTerm={searchTerm}
-  typeFilter={typeFilter}
-  minPrice={minPrice}
-  maxPrice={maxPrice}
-  minBeds={minBeds}
-  maxBeds={maxBeds}
-  postcodeArea={postcodeArea}
-  dateFrom={dateFrom}
-  dateTo={dateTo}
-  favourites={favourites}
-  addFavourite={addFavourite}
-  removeFavourite={removeFavourite}
-  clearFavourites={clearFavourites}
-/>
+                searchTerm={searchTerm}
+                typeFilter={typeFilter}
+                minPrice={minPrice}
+                maxPrice={maxPrice}
+                minBeds={minBeds}
+                maxBeds={maxBeds}
+                postcodeArea={postcodeArea}
+                dateFrom={dateFrom}
+                dateTo={dateTo}
+                favourites={favourites}
+                addFavourite={addFavourite}
+                removeFavourite={removeFavourite}
+                clearFavourites={clearFavourites}
+                />
 
             </div>
           }

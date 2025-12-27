@@ -9,7 +9,8 @@ const SearchBar = ({
   setMaxBeds,
   setPostcodeArea,
   setDateFrom,
-  setDateTo
+  setDateTo,
+  setTenureFilter
 }) => {
   return (
     <section>
@@ -57,8 +58,18 @@ const SearchBar = ({
         <input type="date" id="dateTo" name="dateTo" onChange={(e) => setDateTo(e.target.value)} />
         <br /><br />
 
-        <button type="button">For Sale</button>
-        <button type="button">For Rent</button>
+        <button type="button" className="button buttonPrimary" onClick={() => setTenureFilter('Sale')}>
+          For Sale
+        </button>
+
+        <button type="button" className="button buttonPrimary" onClick={() => setTenureFilter('Rent')}>
+          For Rent
+        </button>
+ 
+        <button type="button" className="button" onClick={() => setTenureFilter('Any')}>
+          Show All
+        </button>
+
       </form>
     </section>
   );

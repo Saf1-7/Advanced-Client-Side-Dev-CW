@@ -15,7 +15,8 @@ const Gallery = ({
   favourites,
   addFavourite,
   removeFavourite,
-  clearFavourites
+  clearFavourites,
+  tenureFilter
 }) => {
   const [products, setProducts] = useState([]);
 
@@ -31,40 +32,49 @@ const Gallery = ({
   };
 
   const filteredProducts = products.filter((p) => {
-    const matchesSearch = p.location.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesType = typeFilter === 'Any' || p.type === typeFilter;
+  const matchesSearch = p.location.toLowerCase().includes(searchTerm.toLowerCase());
+  const matchesType = typeFilter === 'Any' || p.type === typeFilter;
 
-    const minP = minPrice === '' ? null : Number(minPrice);
-    const maxP = maxPrice === '' ? null : Number(maxPrice);
-    const matchesMinPrice = minP === null || p.price >= minP;
-    const matchesMaxPrice = maxP === null || p.price <= maxP;
+  let matchesTenure = true;
+  if (tenureFilter === 'Sale') {
+  matchesTenure = p.tenure === 'Sale';
+  } else if (tenureFilter === 'Rent') {
+  matchesTenure = p.tenure === 'Rent';
+  }
 
-    const minB = minBeds === '' ? null : Number(minBeds);
-    const maxB = maxBeds === '' ? null : Number(maxBeds);
-    const matchesMinBeds = minB === null || p.bedrooms >= minB;
-    const matchesMaxBeds = maxB === null || p.bedrooms <= maxB;
 
-    const area = postcodeArea.trim().toUpperCase();
-    const matchesPostcode = area === '' || p.location.toUpperCase().includes(area);
+  const minP = minPrice === '' ? null : Number(minPrice);
+  const maxP = maxPrice === '' ? null : Number(maxPrice);
+  const matchesMinPrice = minP === null || p.price >= minP;
+  const matchesMaxPrice = maxP === null || p.price <= maxP;
 
-    const propDate = new Date(p.added.year, monthMap[p.added.month], p.added.day);
-    const from = dateFrom === '' ? null : new Date(dateFrom);
-    const to = dateTo === '' ? null : new Date(dateTo);
-    const matchesFrom = from === null || propDate >= from;
-    const matchesTo = to === null || propDate <= to;
-    const matchesDate = matchesFrom && matchesTo;
+  const minB = minBeds === '' ? null : Number(minBeds);
+  const maxB = maxBeds === '' ? null : Number(maxBeds);
+  const matchesMinBeds = minB === null || p.bedrooms >= minB;
+  const matchesMaxBeds = maxB === null || p.bedrooms <= maxB;
 
-    return (
-      matchesSearch &&
-      matchesType &&
-      matchesMinPrice &&
-      matchesMaxPrice &&
-      matchesMinBeds &&
-      matchesMaxBeds &&
-      matchesPostcode &&
-      matchesDate
-    );
-  });
+  const area = postcodeArea.trim().toUpperCase();
+  const matchesPostcode = area === '' || p.location.toUpperCase().includes(area);
+
+  const propDate = new Date(p.added.year, monthMap[p.added.month], p.added.day);
+  const from = dateFrom === '' ? null : new Date(dateFrom);
+  const to = dateTo === '' ? null : new Date(dateTo);
+  const matchesFrom = from === null || propDate >= from;
+  const matchesTo = to === null || propDate <= to;
+  const matchesDate = matchesFrom && matchesTo;
+
+  return (
+    matchesSearch &&
+    matchesType &&
+    matchesTenure &&
+    matchesMinPrice &&
+    matchesMaxPrice &&
+    matchesMinBeds &&
+    matchesMaxBeds &&
+    matchesPostcode &&
+    matchesDate
+  );
+});
 
   return (
     <div className="grid">
